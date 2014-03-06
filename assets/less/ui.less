@@ -1,0 +1,241 @@
+/* Reusable UI elements.
+-------------------------------------------------------------- */
+
+/* --- App bar --- */
+.app-bar {
+
+	// Config.
+	@background: 		#3d8fc9;
+	@link_colour: 		darken(@background, 15%);
+	@nav_item_spacing:	20px;
+	@nav_item_size:		14px;
+	@padding:			15px 40px;
+
+	// Mixins.
+	.clearfix;
+	.border-box;
+
+	// Styles.
+	display: block;
+	background: @background;
+	padding: @padding;
+
+	// Navigation.
+	nav {
+		display: inline-block;
+		float: right;
+
+		ul {
+			.clearfix;
+			display: block;
+			font-size: @nav_item_size;
+			line-height: @nav_item_size;
+
+			li {
+				display: inline-block;
+				float: left;
+
+				a {
+					display: block;
+					color: @link_colour;
+					margin-right: @nav_item_spacing;
+					font-weight: bold;
+
+					&.active, &:hover {
+						color: #fff;
+					}
+
+					span {
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+	}
+
+	// Logo.
+	> h1 {
+		display: inline-block;
+		float: left;
+		color: #fff;
+		height: 23px;
+		line-height: 23px;
+	}
+}
+
+/* --- Sub App Bar --- */
+.sub-app-bar {
+
+	// Config.
+	@background: 		#212a31;
+	@link_colour: 		#fff;
+	@padding:			15px 40px;
+
+	// Mixins.
+	.clearfix;
+	.border-box;
+
+	// Styles.
+	display: block;
+	background: @background;
+	padding: @padding;
+}
+
+/* --- Current User --- */
+.current-user {
+	.clearfix;
+
+	img {
+		display: inline-block;
+		float: left;
+	}
+
+	.info {
+		display: inline-block;
+		float: left;
+
+		h1 {
+			display: block;
+		}
+
+		p {
+			display: block;
+		}
+	}
+}
+
+/* --- Current User Stats --- */
+.current-user-stats {
+
+	ul {
+		.clearfix;
+		display: block;
+
+		li {
+			display: inline-block;
+			float: left;
+		}
+	}
+}
+
+/* --- Current User Options --- */
+.current-user-options {
+	.clearfix;
+
+	a {
+		display: inline-block;
+		float: left;
+		padding-right: 10px;
+	}
+}
+
+/* --- Section Title --- */
+.section-title {
+	.clearfix;
+	display: block;
+	padding: 20px 40px;
+    border-bottom: 1px solid #ececec;
+
+	h3 {
+		display: inline-block;
+		float: left;
+		color: #4c5d67;
+		font-weight: 700;
+		font-size: 22px;
+	}
+}
+
+/* --- Tweet Stream --- */
+.tweet-stream {
+	display: block;
+
+	ul {
+		display: block;
+
+		li {
+			.clearfix;
+			display: block;
+			padding: 15px 40px;
+
+			.inner {
+				display: block;
+				position: relative;
+
+				img {
+					.border-radius(60px);
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 60px;
+				}
+
+				.post {
+					display: block;
+					padding-left: 75px;
+
+					.author {
+						.clearfix;
+						display: block;
+
+						h4 {
+							display: inline-block;
+							float: left;
+							font-size: 15px;
+							line-height: 15px;
+							font-weight: 700;
+							margin-right: 5px;
+						}
+
+						p {
+							display: inline-block;
+							float: left;
+							font-size: 14px;
+							line-height: 16px;
+						}
+					}
+
+					.content {
+						display: block;
+						margin: 5px 0 0 0;
+
+						p {
+							display: block;
+							font-size: 14px;
+							line-height: 20px;
+						}
+					}
+
+					.meta {
+						.clearfix;
+						display: block;
+						margin: 10px 0 0 0;
+
+						p {
+							display: inline-block;
+							float: left;
+							margin-right: 15px;
+							font-size: 12px;
+							line-height: 12px;
+
+							span {
+								font-size: 12px;
+							}
+
+							&.hidden {
+								display: none;
+								font-weight: 700;
+							}
+						}
+					}
+				}
+			}
+
+			&:hover {
+
+				p.hidden {
+					display: inline-block !important;
+				}
+			}
+		}
+	}
+}

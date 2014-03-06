@@ -1,0 +1,28 @@
+/* Lovely, lovely mixins.
+-------------------------------------------------------------- */
+
+// Clear/float fix.
+.clearfix() {
+    zoom: 1;
+    
+    &:before {
+        content: '';
+        display: block;
+    }
+
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+// Borderbox sizing.
+.border-box {
+    box-sizing: border-box;
+}
+
+// Border radius.
+.border-radius(@params) {
+    border-radius: @params;
+}

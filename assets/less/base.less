@@ -1,0 +1,194 @@
+/* The base stylesheet in which we import then style everything.
+-------------------------------------------------------------- */
+
+// Import Pilot, for lovely prebuilt shiznizz.
+@import 'pilot/pilot';
+
+// Import /our/ LESS files.
+@import 'config';
+@import 'typography';
+@import 'ui';
+
+body {
+    font-family: 'Open Sans';
+}
+
+/* --- Sub App Bar --- */
+.sub-app-bar {
+
+    // Current user.
+    .current-user {
+        img {
+            .border-radius(50px);
+            width: 50px;
+        }
+
+        .info {
+            padding-left: 13px;
+
+            h2 {
+                margin: 8px 0 0 0;
+                font-size: 14px;
+
+                a {
+                    color: #fff;
+                }
+            }
+
+            p {
+                a {
+                    color: #788d9e;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    // Current user stats.
+    .current-user-stats {
+
+        li {
+            text-align: center;
+            padding: 0 20px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            span {
+                display: block;
+                color: #d9e2e9;
+                font-weight: 800;
+                margin: 5px 0;
+                font-size: 16px;
+            }
+
+            p {
+                display: block;
+                font-size: 14px;
+                color: #7d94a2;
+            }
+        }
+    }
+
+    // Current user options.
+    .current-user-options {
+
+        a {
+            color: #8ea9bc;
+            line-height: 50px;
+
+            &:hover {
+                color: #fff;
+            }
+
+            span {
+                display: none;
+            }
+
+            &.settings {
+                font-size: 25px;
+            }
+
+            &.more-settings {
+                font-size: 16px;
+            }
+
+            &.compose-tweet {
+                @size: 40px;
+                .border-radius(@size);
+
+                background: #3d8fc9;
+                color: #fff;
+                text-align: center;
+                width: @size;
+                height: @size;
+                line-height: @size;
+                margin: ((50 - @size) /2) 0;
+                margin-left: 20px;
+                padding: 0;
+
+                &:hover {
+                    background: #fff;
+                    color: #3d8fc9;
+                }
+            }
+        }
+
+        .inner {
+            .clearfix;
+            float: right;
+            display: inline-block;
+        }
+    }
+}
+
+/* --- Content --- */
+#content {
+    display: block;
+    background: #fff;
+
+    .column {
+        border-right: 1px solid #ececec;
+
+        &:last-child {
+            border: none;
+        }
+
+        // Tweet Stream
+        .tweet-stream {
+            li {
+                border-bottom: 1px solid #ececec;
+
+                .author {
+                    h4 {
+                        color: #4e5c65;
+                    }
+
+                    p {
+                        color: #cecece;
+                    }
+                }
+
+                .content {
+                    p {
+                        color: #6f818d;
+
+                        a {
+                            color: #3e8ecb;
+
+                            &:hover {
+                                color: #333;
+                            }
+                        }
+                    }
+                }
+
+                .meta {
+                    .timestamp {
+                        color: #cfcfcf;
+                        margin-right: 40px;
+                    }
+
+                    p {
+                        a {
+                            color: #3d8fc9;
+
+                            &:hover {
+                                color: #333;
+                            }
+
+                            span {
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
